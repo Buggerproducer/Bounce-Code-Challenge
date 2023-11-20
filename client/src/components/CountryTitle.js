@@ -1,10 +1,19 @@
 import React from 'react';
 
-const CountryTitle = ({country}) => {
+const CountryTitle = ({ country }) => {
     return (
         <div>
-            <h1>{country.name.official}</h1>
-            <h2>{country.name.common}</h2>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <img alt="Bootstrap Image Preview" src={country.flags.png} class="img-thumbnail" />
+                </div>
+            </div>
+            <h3 class="text-center">
+                {country.name.common}
+            </h3>
+            <p class="text-center">
+                {country.name.official}
+            </p>
         </div>
     );
 }
