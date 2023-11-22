@@ -19,7 +19,6 @@ const Input = ({setCountryList}) => {
 
     return (
         <Fragment>
-            <h1 className="text-center mt-5">Get Your Country</h1>
             <form className="d-flex mt-5 position-relative" onSubmit={searchInput}>
             {/* <Dropdown>
                 <Dropdown.Toggle variant="primary" id="dropdown-basic">

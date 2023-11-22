@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.flag-image {
+  width: 270px; /* Or any other size */
+  height: 180px;
+  /* You can also add height if needed */
+}
