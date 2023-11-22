@@ -42,3 +42,19 @@
   height: 180px;
   /* You can also add height if needed */
 }
+
+/*
+Put the item in the center in both vertical and horizontal directions
+Use the abosulte position and transform properties
+*/
+
+
+.large-image {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.no-border {
+  border: none !important;
+}

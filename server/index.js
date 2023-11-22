@@ -39,7 +39,8 @@ app.get('/exact_country/:name', async (req, res) => {
         // Send the response back to the client
         const countryInfo = response.data; // Extracting the 'name' from each country
 
-        console.log(countryInfo[0]); // Logging the names list
+        console.log(countryInfo[0]); 
+
         res.json(countryInfo[0]); // Sending the list of names back to the client
     }catch (error) {
         // If there's an error, send back a status code and message
@@ -71,5 +72,5 @@ app.get('/all_countries', async (req, res) => {
     }
 });
 
-app.listen(3306, () => 
-    {console.log('Server running on port 3306')});
+app.listen(8080, () => 
+    {console.log('Server running on port 8080')});

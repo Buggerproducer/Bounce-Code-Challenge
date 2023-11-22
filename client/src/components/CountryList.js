@@ -9,12 +9,11 @@ const CountryList = ({ setCountry }) => {
     const itemsPerPage = 8; // Number of items per page
     const pageNeighbours = 1; // How many adjacent pages should be shown
 
-
     useEffect(() => {
         // Fetch countries on component mount
         const fetchCountries = async () => {
             try {
-                const response = await fetch('http://localhost:3306/all_countries');
+                const response = await fetch('http://localhost:8080/all_countries');
                 const data = await response.json();
                 setCountryList(data);
                 setPageCount(Math.ceil(data.length / itemsPerPage));
@@ -29,6 +28,7 @@ const CountryList = ({ setCountry }) => {
     const handlePageClick = (number) => {
         setCurrentPage(number); // Set the current page to the number clicked
     };
+
 
     // Calculate the currently displayed countries
     const displayedCountries = countryList.slice(
