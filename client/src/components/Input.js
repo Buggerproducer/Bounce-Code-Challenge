@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import Dropdown from 'react-bootstrap/Dropdown';
 
 const Input = ({setCountryList}) => {
     const [inputValue, setInputValue] = useState('');

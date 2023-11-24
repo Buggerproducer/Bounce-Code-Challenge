@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment} from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //component
 import Input from '../components/Input';
@@ -8,9 +7,8 @@ import CountryList from '../components/CountryList';
 
 function Home() {
   // Initialize the state of the country List
-  const [countryList, setCountryList] = React.useState(null); // Initialize the state with null
+  const [countryList, setCountryList] = useState(null); // Initialize the state with null
   // Initialize the state of the country
-  const [country, setCountry] = React.useState(null); // Initialize the state with null
 
   useEffect(() => {
     // Fetch countries on component mount
