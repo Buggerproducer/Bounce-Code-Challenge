@@ -18,12 +18,21 @@ app.get('/country/:name', async (req, res) => {
     try {
         // Use axios to make a GET request to the REST Countries API
         const response = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
-        // Send the response back to the client
-        const namesList = response.data.map(country => country.name); // Extracting the 'name' from each country
 
-        console.log(namesList); // Logging the names list
-        res.json(namesList); // Sending the list of names back to the client
-    } catch (error) {
+        // Send the response back to the client
+        const countryInfo = response.data; // Extracting the 'name' from each country
+        //only get the url of flag, common name, population, region, capital
+        const countryList = countryInfo.map(country => {
+            return {
+                flagUrl: country.flags.png,
+                name: country.name.common,
+                population: country.population,
+                region: country.region,
+                capital: country.capital
+            }
+        });
+        res.json(countryList); // Sending the list of names back to the client
+        } catch (error) {
         // If there's an error, send back a status code and message
         console.log(error);
     }

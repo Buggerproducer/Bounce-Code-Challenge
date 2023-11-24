@@ -2,32 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 import CountryCard from './Card';
 
-const CountryList = ({ setCountry }) => {
-    const [countryList, setCountryList] = useState([]);
+const CountryList = ({ countryList }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     const itemsPerPage = 8; // Number of items per page
     const pageNeighbours = 1; // How many adjacent pages should be shown
 
-    useEffect(() => {
-        // Fetch countries on component mount
-        const fetchCountries = async () => {
-            try {
-                const response = await fetch('http://localhost:8080/all_countries');
-                const data = await response.json();
-                setCountryList(data);
-                setPageCount(Math.ceil(data.length / itemsPerPage));
-            } catch (error) {
-                console.error('Error fetching countries:', error);
-            }
-        };
-
-        fetchCountries();
-    }, []);
+   
 
     const handlePageClick = (number) => {
         setCurrentPage(number); // Set the current page to the number clicked
     };
+
+    useEffect(() => {
+        setPageCount(Math.ceil(countryList.length / itemsPerPage)); // Calculate the number of pages
+    }
+    , [countryList]);
 
 
     // Calculate the currently displayed countries
