@@ -11,7 +11,7 @@ const CountryDetail = () => {
     useEffect(() => {
         const fetchCountry = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/exact_country/${countryName}`);
+                const response = await fetch(`http://localhost:8080/country/exact_country/${countryName}`);
                 const data = await response.json();
                 setCountry(data); // Update the state with the fetched data
             } catch (error) {

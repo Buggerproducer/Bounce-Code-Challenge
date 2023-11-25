@@ -14,7 +14,7 @@ function Home() {
     // Fetch countries on component mount
     const fetchCountries = async () => {
         try {
-            const response = await fetch('http://localhost:8080/all_countries');
+            const response = await fetch('http://localhost:8080/country/all_countries');
             const data = await response.json();
             setCountryList(data);
         } catch (error) {

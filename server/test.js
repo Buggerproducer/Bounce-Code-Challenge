@@ -3,9 +3,9 @@ const app = require('./index.js');
 const supertest = require('supertest');
 const request = supertest(app);
 
-describe('GET /country/:name', () => {
+describe('GET /country/search_country/:name', () => {
     it('responds with json containing a list of country details', async () => {
-      const response = await request.get('/country/usa');
+      const response = await request.get('/country/search_country/usa');
       expect(response.statusCode).toBe(200);
       expect(response.body).toBeInstanceOf(Array);
       console.log(response.body);
@@ -14,9 +14,9 @@ describe('GET /country/:name', () => {
   });
 
 
-  describe('GET /exact_country/:name', () => {
+  describe('GET /country/exact_country/:name', () => {
     it('responds with json containing a list of country details', async () => {
-      const response = await request.get('/exact_country/United States');
+      const response = await request.get('/country/exact_country/United States');
       expect(response.statusCode).toBe(200);
       expect(response.body).toBeInstanceOf(Object);
       expect(response.body.name.common).toContain('United States');
@@ -24,9 +24,9 @@ describe('GET /country/:name', () => {
   });
 
 
-  describe('GET/all_countries', () => {
+  describe('GET /country/all_countries', () => {
     it('responds with json containing a list of country details', async () => {
-      const response = await request.get('/all_countries');
+      const response = await request.get('/country/all_countries');
       expect(response.statusCode).toBe(200);
       expect(response.body).toBeInstanceOf(Array);
       // examin the length of the array to contain 250 countries

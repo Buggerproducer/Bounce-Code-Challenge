@@ -6,7 +6,7 @@ const Input = ({setCountryList}) => {
     const searchInput = async (e) => {
         e.preventDefault();
         try{
-            const response = await fetch(`http://localhost:8080/country/${inputValue}`, {
+            const response = await fetch(`http://localhost:8080/country/search_country/${inputValue}`, {
                 method: 'GET', //backend is expecting a GET request
             });
             const fetchedData = await response.json(); // Parse JSON data from the response
