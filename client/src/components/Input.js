@@ -19,19 +19,6 @@ const Input = ({setCountryList}) => {
     return (
         <Fragment>
             <form className="d-flex mt-5 position-relative" onSubmit={searchInput}>
-            {/* <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                    Filter
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">All</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Name</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Code</Dropdown.Item>
-                    <Dropdown.Item href="#/action-4">Currency</Dropdown.Item>
-                    <Dropdown.Item href="#/action-5">Language</Dropdown.Item>
-                </Dropdown.Menu>
-                </Dropdown> */}
                 <input 
                     type="text" 
                     className="form-control mr-2" 

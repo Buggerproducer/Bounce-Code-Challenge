@@ -1,51 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import SwitchThemeButton from '../components/SwitchThemeButton';
 
-const CountryDetail = () => {
-    const navigate = useNavigate(); // Hook for navigating
-    const { countryName } = useParams();
-    // Fetch the detailed information of the country using the countryName
-    const [country, setCountry] = useState(null); // Initialize the state with null
 
-    useEffect(() => {
-        const fetchCountry = async () => {
-            try {
-                const response = await fetch(`http://localhost:8080/exact_country/${countryName}`);
-                const data = await response.json();
-                setCountry(data); // Update the state with the fetched data
-            } catch (error) {
-                console.error('Error fetching country:', error);
-            }
-        };
+function CountryDetails(country) {
 
-        fetchCountry();
-    }, [countryName]); // The effect depends on countryName
-
-    // Function to handle back navigation
-    const handleBack = () => {
-        navigate(-1); // Navigate back to the previous page
-    };
+    //when enter this page, show the country details on console
+    console.log(country);
 
     return (
-
-        <div id="main-container" class="container-fluid">
-        <div className="row">
-                {/* Back Button */}
-                <div className="col-6">
-                    <button onClick={handleBack} className="btn btn-secondary mt-5 ms-3">
-                        Back
-                    </button>
-                </div>
-                <div className="col-4 d-flex justify-content-end">
-                    <SwitchThemeButton />
-                </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center mt-5">Country Detail</h1>
-            </div>
-        </div>
         <div class="row mt-5">
         <div class="col-md-6 text-center">
             {country && ( // Check that country is not null before trying to access its properties
@@ -92,8 +52,8 @@ const CountryDetail = () => {
          </div>
             </div>
         </div>
-        </div>
+        
     );
-};
+}
 
-export default CountryDetail;
+export default CountryDetails;

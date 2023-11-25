@@ -58,3 +58,112 @@ Use the abosulte position and transform properties
 .no-border {
   border: none !important;
 }
+
+.dark-content {
+  background: #e4e4e4;
+}
+
+.dark-content {
+  background: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color for contrast */
+  border-color: #292929; /* Darker borders for elements */
+}
+
+.dark-content a {
+  color: #bb86fc; /* A light purple color for links for visibility */
+}
+
+.dark-content a:hover {
+  color: #9381ff; /* A slightly different purple color for when links are hovered */
+}
+
+.dark-content button {
+  background-color: #333333; /* Dark buttons */
+  color: #ffffff; /* Text color on buttons */
+  border: none; /* Optionally remove borders from buttons */
+}
+
+.dark-content button:hover {
+  background-color: #444444; /* Lighter background color for button on hover */
+}
+
+.dark-content input,
+.dark-content textarea {
+  background-color: #2a2a2a; /* Dark background for input fields */
+  color: #e0e0e0; /* Light text for input fields */
+  border: 1px solid #444444; /* Slightly lighter border for inputs */
+}
+
+.dark-content input:focus,
+.dark-content textarea:focus {
+  border-color: #bb86fc; /* Highlight with purple when input fields are focused */
+  outline: none; /* Remove the default focus outline */
+}
+
+.dark-content .card {
+  background-color: #333333; /* Dark background for the card */
+  color: #ffffff; /* Light text color for the card */
+}
+
+.dark-content .card a, 
+.dark-content .card a:hover {
+  color: #bb86fc; /* A light purple color for links for visibility */
+}
+
+.dark-content .card .card-body {
+  border-color: #444444; /* Darker borders for elements inside the card */
+}
+
+/* Dark Theme for Pagination */
+.dark-content .pagination {
+  background-color: #343a40; /* Dark background for pagination */
+  color: #ffffff; /* Light text color for pagination */
+}
+
+.dark-content .pagination .page-link {
+  color: #ffffff; /* Light text color for page numbers */
+  background-color: #343a40; /* Dark background for page numbers */
+  border-color: #4e555b; /* Slightly lighter border color for page numbers */
+}
+
+.dark-content .pagination .page-link:hover {
+  color: #ffffff; /* Light text color for page numbers on hover */
+  background-color: #4e555b; /* Slightly lighter background for page numbers on hover */
+}
+
+.dark-content .pagination .page-item.active .page-link {
+  color: #fff;
+  background-color: #007bff; /* Highlight color for the active page number */
+  border-color: #007bff; /* Border color for the active page number */
+}
+
+.dark-content .pagination .page-item.disabled .page-link {
+  color: #6c757d; /* Disabled text color */
+  background-color: #343a40; /* Dark background for disabled page numbers */
+  border-color: #4e555b; /* Border color for disabled page numbers */
+}
+
+.dark-content .list-group-item {
+  background-color: #121212; /* Dark background for the list items */
+  color: #fff; /* Light text color for the list items */
+  border-bottom: 1px solid #121212; /* Slightly lighter border color for list items */
+}
+
+.dark-content .list-group-item:last-child {
+  border-bottom: none; /* Remove the border from the last list item */
+}
+
+.dark-content .list-group-item a {
+  color: #61dafb; /* Color for links inside list items */
+}
+
+.dark-content .list-group-item a:hover {
+  color: #9ad0f5; /* Slightly different color for links on hover */
+}
+
+
+
+.margin-right {
+  margin-right: 10px;
+}
+

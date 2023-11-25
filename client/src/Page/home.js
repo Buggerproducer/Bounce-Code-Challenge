@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment} from 'react';
 //component
 import Input from '../components/Input';
 import CountryList from '../components/CountryList';
-
+import SwitchThemeButton from '../components/SwitchThemeButton';
 
 function Home() {
   // Initialize the state of the country List
@@ -29,11 +29,14 @@ function Home() {
     <div className="container-fluid">
 
     <div class="row">
-		    <div class="col-md-12">
-            <Input setCountryList={setCountryList} />
-            {countryList&&<CountryList countryList={countryList} />}
+		    <div class="col-md-8">
+                <Input setCountryList={setCountryList} />
             </div>
-     </div>
+            <div class="col-md-3 d-flex justify-content-end">
+                <SwitchThemeButton />
+            </div>
+        </div>
+        {countryList&&<CountryList countryList={countryList} />}
       </div>
   </Fragment>;
 }

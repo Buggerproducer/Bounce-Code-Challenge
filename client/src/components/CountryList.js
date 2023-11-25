@@ -11,6 +11,7 @@ const CountryList = ({ countryList }) => {
    
 
     const handlePageClick = (number) => {
+        console.log(number);
         setCurrentPage(number); // Set the current page to the number clicked
     };
 
@@ -18,6 +19,11 @@ const CountryList = ({ countryList }) => {
         setPageCount(Math.ceil(countryList.length / itemsPerPage)); // Calculate the number of pages
     }
     , [countryList]);
+
+    //if the countryList is changed, then resert the currentPage to 0
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [countryList]);
 
 
     // Calculate the currently displayed countries
@@ -32,16 +38,18 @@ const CountryList = ({ countryList }) => {
 
     for (let number = startPage; number < endPage; number++) {
         items.push(
-            <Pagination.Item key={number} active={number === currentPage} onClick={() => handlePageClick(number - 1)}>
+            <Pagination.Item key={number} active={number === currentPage} onClick={() => handlePageClick(number)}>
                 {number+1}
             </Pagination.Item>,
         );
     }
+
+    
     return (
         <div>
             <div className="row">
                 {displayedCountries.map((country, index) => (
-                    <div className="col-md-3 mt-3" key={index}>
+                    <div className="col-md-3 mt-3 d-flex justify-content-center" key={index}>
                         <CountryCard country={country} />
                     </div>
                 ))}
@@ -49,8 +57,8 @@ const CountryList = ({ countryList }) => {
             <div className="row mt-5">
                 <div className="col-md-12 d-flex justify-content-center">
                     <Pagination size="sm">
-                        <Pagination.First onClick={() => handlePageClick(0)} disabled={currentPage === 0} />
-                        <Pagination.Prev onClick={() => handlePageClick(currentPage - 1)} disabled={currentPage === 0} />
+                        <Pagination.First onClick={() => handlePageClick(1)} disabled={currentPage === 0} />
+                        <Pagination.Prev onClick={() => handlePageClick(currentPage-1)} disabled={currentPage === 0} />
 
                         {currentPage > 1 && <Pagination.Ellipsis />}
                         {items}
