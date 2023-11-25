@@ -3,6 +3,11 @@
 ## Introduction
 This project is a comprehensive web application that utilizes Node.js and Express for the backend, coupled with React for the front-end, to deliver a seamless and interactive user experience. The core functionality of the application revolves around providing detailed information about countries worldwide, catering to the needs of users interested in geographical and demographic data.
 
+## Technologies:
+- React
+- Node JS
+- Express
+- Bootstrap
 ## File Structure
 
 The project is organized into a clear and modular file structure. Below is an overview of the key directories and files:
