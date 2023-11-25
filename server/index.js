@@ -32,6 +32,7 @@ app.get('/country/:name', async (req, res) => {
             }
         });
         res.json(countryList); // Sending the list of names back to the client
+
         } catch (error) {
         // If there's an error, send back a status code and message
         console.log(error);
@@ -83,3 +84,5 @@ app.get('/all_countries', async (req, res) => {
 
 app.listen(8080, () => 
     {console.log('Server running on port 8080')});
+
+module.exports = app;
