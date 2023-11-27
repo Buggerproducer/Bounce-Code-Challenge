@@ -15,7 +15,14 @@ const CountryDetail = () => {
                 const data = await response.json();
                 setCountry(data); // Update the state with the fetched data
             } catch (error) {
-                console.error('Error fetching country:', error);
+                try {
+                    // If the request to the local server fails, try the remote server
+                    const response = await fetch(`https://country-search-52pk.onrender.com/country/exact_country/${countryName}`);
+                    const data = await response.json();
+                    setCountry(data); // Update the state with the fetched data
+                } catch (error) {
+                    console.log(error);
+                }
             }
         };
 

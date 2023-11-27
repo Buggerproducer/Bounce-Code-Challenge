@@ -12,7 +12,17 @@ const Input = ({setCountryList}) => {
             const fetchedData = await response.json(); // Parse JSON data from the response
             setCountryList(fetchedData); // Update the state in the App component with the fetched data
         }catch(err){
-            console.error(err.message);
+            try{
+                // If the request to the local server fails, try the remote server
+                const response = await fetch(`https://country-search-52pk.onrender.com/country/search_country/${inputValue}`, {
+                    method: 'GET', //backend is expecting a GET request
+                });
+                const fetchedData = await response.json(); // Parse JSON data from the response
+                setCountryList(fetchedData); // Update the state in the App component with the fetched data
+
+            }catch(err){
+                console.log(err);
+            }
         }
     }
 

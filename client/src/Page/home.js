@@ -18,7 +18,14 @@ function Home() {
             const data = await response.json();
             setCountryList(data);
         } catch (error) {
-            console.error('Error fetching countries:', error);
+            try {
+                // If the request to the local server fails, try the remote server
+                const response = await fetch('https://country-search-52pk.onrender.com/country/all_countries');
+                const data = await response.json();
+                setCountryList(data);
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
 
