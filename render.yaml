@@ -13,4 +13,3 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    port: 8080
