@@ -1,0 +1,16 @@
+services:
+- type: web
+  name: client
+  env: static
+  buildCommand: npm install && npm run build
+  staticPublishPath: ./client/build
+
+- type: web
+  name: server
+  env: node
+  buildCommand: npm install
+  startCommand: npm start
+  envVars:
+    - key: NODE_ENV
+      value: production
+  port: 8080
